@@ -21,7 +21,7 @@ figures/%.pdf: figures/%.svg
 poster: figures
 	latexmk -$(LATEX) -logfilewarnings -halt-on-error $(FILENAME)
 	rsync $(FILENAME).pdf $(output_file)
-	rsync $(FILENAME).pdf chep-2019-poster.pdf
+	rsync $(FILENAME).pdf NSF-review-2020-pyhf-poster.pdf
 
 clean:
 	rm -f *.aux *.bbl *.blg *.dvi *.idx *.lof *.log *.lot *.toc \
