@@ -17,7 +17,7 @@
 %----------------------------------------------------------------------------------------
 
 % \directlua{pdf.setminorversion(7)}
-\documentclass[a0,portrait]{a0poster}
+\documentclass[princeton,portrait]{a0poster}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
 \columnsep=100pt % This is the amount of white space between the columns in the poster
@@ -40,7 +40,23 @@
 \usepackage{bm}
 \usepackage{tikz}
 \usepackage[skins]{tcolorbox}
+\usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
+
+% \fancyhf{}% Remove header/footer
+% \lhead{\colorbox{red}{%
+%   \makebox[\dimexpr\linewidth-2\fboxsep][l]{\color{white}%
+%     REST API Reference (v12.011918)
+%     \hfill
+%     \thepage
+%   }%
+% }}
+
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+% \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+\definecolor{NSF-blue}{HTML}{3487c0}
+\definecolor{NSF-violet}{HTML}{8b82bb}
 
 % Shrink bottom margin
 \addtolength{\textheight}{7cm}
@@ -56,35 +72,73 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 %
 % \begin{minipage}[b]{0.75\linewidth}
-\begin{minipage}[b]{0.6\linewidth}
- \VERYHuge \color{Black} \textbf{pyhf} \color{Black}\\[0.5cm] % Title
- \Huge{pure Python implementation of HistFactory}\\[1cm] % Subtitle
- % \author{{\href{https://www.matthewfeickert.com/}{\underline{Matthew Feickert}$^{1}$}}, \href{http://www.lukasheinrich.com/}{Lukas Heinrich$^{2}$}, \href{https://giordonstark.com/}{Giordon Stark$^{3}$}, \href{http://theoryandpractice.org/}{Kyle Cranmer$^{4}$}}
- % \institution{1 Southern Methodist University,~~~2 CERN,~~~3 University of California Santa Cruz,~~~4 New York University}
- \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
- \LARGE {\href{https://www.matthewfeickert.com/}{\underline{Matthew Feickert}$^{1}$}}, \href{http://www.lukasheinrich.com/}{Lukas Heinrich$^{2}$}, \href{https://giordonstark.com/}{Giordon Stark$^{3}$}\\[0.5cm] % Author(s)
- \normalsize {1 University of Illinois at Urbana-Champaign,~2 CERN,~3 University of California Santa Cruz}\\[1cm]% University/organization
- % \LARGE\color{MediumBlue} \texttt{john@LaTeXTemplates.com} --- 1 (000) 111 1111\\
- \color{Black}
+% Header
+\begin{minipage}[b]{\linewidth}
+ % IRIS-HEP logo
  \begin{minipage}{0.2\linewidth}
-  \begin{center}
-   \href{https://pypi.org/project/pyhf/}{\includegraphics[width=\linewidth]{pyhf_PyPI.pdf}}
-  \end{center}
+  \href{https://iris-hep.org/}{\includegraphics[width=\linewidth]{IRIS-HEP_logo.eps}}
  \end{minipage}%
  \quad
- \begin{minipage}{0.3\linewidth}
+ % project title
+ \begin{minipage}{0.6\linewidth}
+  \VERYHuge \color{Black} \textbf{pyhf}\\[0.5cm] \color{Black}\Huge{pure Python implementation of HistFactory}\\[1cm] % Subtitle
+  \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+  \LARGE {\href{https://www.matthewfeickert.com/}{\underline{Matthew Feickert}$^{1}$}}, \href{http://www.lukasheinrich.com/}{Lukas Heinrich$^{2}$}, \href{https://giordonstark.com/}{Giordon Stark$^{3}$}\\[0.5cm] % Author(s)
+  \normalsize {1 University of Illinois at Urbana-Champaign,~2 CERN,~3 University of California Santa Cruz}\\[1cm]% University/organization
+  \color{Black}
+ \end{minipage}
+ \quad
+ % pyhf logo
+ \begin{minipage}{0.16\linewidth}
   \begin{center}
-   \href{https://doi.org/10.5281/zenodo.1169739}{\includegraphics[width=\linewidth]{zenodo_doi.pdf}}
+   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{pyhf-logo.png}}
   \end{center}
  \end{minipage}%
+ % \begin{minipage}{0.2\linewidth}
+ %  \begin{center}
+ %   \href{https://pypi.org/project/pyhf/}{\includegraphics[width=\linewidth]{pyhf_PyPI.pdf}}
+ %  \end{center}
+ % \end{minipage}%
+ % \quad
+ % \begin{minipage}{0.3\linewidth}
+ %  \begin{center}
+ %   \href{https://doi.org/10.5281/zenodo.1169739}{\includegraphics[width=\linewidth]{zenodo_doi.pdf}}
+ %  \end{center}
+ % \end{minipage}%
 \end{minipage}
 %
-\begin{minipage}[b]{0.25\linewidth}
- % \includegraphics[width=20cm]{pyhf-logo.png}\\
- \includegraphics[width=\linewidth]{pyhf-logo.png}\\
-\end{minipage}
+% \vspace{0.1cm}
+\noindent\makebox[\linewidth]{\crule[NSF-blue]{\paperheight}{0.5cm}}
+%
+% \vspace{1cm}
+% \begin{minipage}{0.5\linewidth}
+%  \begin{flushright}
+%   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=0.3\linewidth]{GitHub_logo.png}}
+%  \end{flushright}
+% \end{minipage}%
+% \quad
+% \begin{minipage}{0.5\linewidth}
+%  \begin{flushleft}
+%   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=0.3\linewidth]{github_qr_code.pdf}}
+%  \end{flushleft}
+% \end{minipage}%
+% \begin{minipage}{0.25\linewidth}
+% \includegraphics[width=20cm]{pyhf-logo.png}\\
+% \includegraphics[width=\linewidth]{pyhf-logo.png}\\
+% \begin{minipage}{\linewidth}
+%  \begin{flushright}
+%   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=0.3\linewidth]{GitHub_logo.png}}
+%  \end{flushright}
+% \end{minipage}%
+% \quad
+% \begin{minipage}{\linewidth}
+%  \begin{flushleft}
+%   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=0.3\linewidth]{github_qr_code.pdf}}
+%  \end{flushleft}
+% \end{minipage}%
+% \end{minipage}
 
-\vspace{1cm} % A bit of extra whitespace between the header and poster content
+% \vspace{1cm} % A bit of extra whitespace between the header and poster content
 
 %----------------------------------------------------------------------------------------
 
@@ -169,43 +223,50 @@
  Support optimizers that implement Newton's method as well as \texttt{scipy.optimize.minimize} and MINUIT. More advanced optimizers to come soon!
 
  \vspace{1cm}
- \begin{minipage}{0.5\linewidth}
-  \begin{flushright}
-   \href{https://github.com/diana-hep/pyhf}{\includegraphics[width=0.3\linewidth]{GitHub_logo.png}}
-  \end{flushright}
- \end{minipage}%
- \quad
- \begin{minipage}{0.5\linewidth}
-  \begin{flushleft}
-   \href{https://github.com/diana-hep/pyhf}{\includegraphics[width=0.3\linewidth]{github_qr_code.pdf}}
-  \end{flushleft}
- \end{minipage}%
+ % \begin{minipage}{0.5\linewidth}
+ %  \begin{flushright}
+ %   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=0.3\linewidth]{GitHub_logo.png}}
+ %  \end{flushright}
+ % \end{minipage}%
+ % \quad
+ % \begin{minipage}{0.5\linewidth}
+ %  \begin{flushleft}
+ %   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=0.3\linewidth]{github_qr_code.pdf}}
+ %  \end{flushleft}
+ % \end{minipage}%
 
  \section*{\LARGE\color{MediumBlue} Implementation}
  \begin{center}
   % \includegraphics[width=0.8\linewidth]{computational_graph3.pdf}
-  \includegraphics[width=0.9\linewidth]{computational_graph.png}
+  % \includegraphics[width=0.8\linewidth]{computational_graph.png}
+  \includegraphics[width=0.6\linewidth]{computational_graph.png}
  \end{center}
  The computational graph of multidimensional array operations for likelihood function of a physics analysis defined through HistFactory
 
  \vspace{1cm}
  %
- \begin{minipage}{0.33\linewidth}
+ \begin{minipage}{0.25\linewidth}
   \begin{center}
-   \includegraphics[width=\linewidth]{NumPy_logo.pdf}
+   \href{https://github.com/numpy/numpy}{\includegraphics[width=\linewidth]{NumPy_logo.pdf}}
   \end{center}
  \end{minipage}%
  \quad
- \begin{minipage}{0.33\linewidth}
+ \begin{minipage}{0.25\linewidth}
   \begin{center}
-   \includegraphics[width=\linewidth]{TensorFlow_logo.pdf}
+   \href{https://github.com/tensorflow/tensorflow}{\includegraphics[width=\linewidth]{TensorFlow_logo.pdf}}
   \end{center}
  \end{minipage}%
  \quad
- \begin{minipage}{0.33\linewidth}
+ \begin{minipage}{0.25\linewidth}
   \begin{center}
-   \includegraphics[width=0.85\linewidth]{Pytorch_logo.pdf}
+   \href{https://github.com/pytorch/pytorch}{\includegraphics[width=0.85\linewidth]{Pytorch_logo.pdf}}
   \end{center}
+ \end{minipage}%
+ \quad
+ \begin{minipage}{0.25\linewidth}
+  \begin{flushleft}
+   \href{https://github.com/google/jax}{\includegraphics[width=0.5\linewidth]{JAX_logo.png}}
+  \end{flushleft}
  \end{minipage}%
  \vspace{1cm}
 
@@ -216,7 +277,8 @@
  The \textcolor{blue}{full likelihood} can be expressed as a \textbf{single JSON document}.\\Archive friendly for analysis presentation! Used by ATLAS to \textcolor{blue}{publish likelihoods} to HEPData (\textcolor{blue}{\href{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2019-029/}{ATL-PHYS-PUB-2019-029}}).
  \vspace{0.5em}
  \begin{center}
-  \href{https://raw.githubusercontent.com/diana-hep/pyhf/master/examples/2-bin_1-channel.json}{\includegraphics[width=0.7\linewidth]{carbon_JSON_spec_annotated.png}}
+  % \href{https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/examples/json/2-bin_1-channel.json}{\includegraphics[width=0.7\linewidth]{carbon_JSON_spec_annotated.png}}
+  \href{https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/examples/json/2-bin_1-channel.json}{\includegraphics[width=0.6\linewidth]{carbon_JSON_spec_annotated.png}}
  \end{center}
  \vspace{-1em}
  \begin{center}
@@ -224,33 +286,43 @@
  \end{center}
  \begin{center}
   \includegraphics[width=0.7\linewidth]{carbon_pyhf_CLs.png}
- \end{center}
-
- \begin{center}
-  JSON Patch standard allows for reinterpretation with \textcolor{blue}{new signal models}
- \end{center}
- \begin{center}
-  \includegraphics[width=0.7\linewidth]{carbon_JSON_patch.png}
+  % \includegraphics[width=0.5\linewidth]{carbon_pyhf_CLs.png}
  \end{center}
  %
- \begin{center}
-  \includegraphics[width=0.7\linewidth]{carbon_reinterpretation.png}
- \end{center}
-
- \begin{minipage}{0.5\linewidth}
-  \begin{flushright}
-   \href{https://indico.cern.ch/event/773049/contributions/3476143/}{
-    \begin{tikzpicture}
-     \node[circle,draw,inner sep=2cm,fill overzoom image=chep2019_logo.png] (A) {};
-    \end{tikzpicture}}
-  \end{flushright}
- \end{minipage}%
- \quad
- \begin{minipage}{0.5\linewidth}
-  \begin{flushleft}
-   \href{https://indico.cern.ch/event/773049/contributions/3476143/}{\includegraphics[width=0.3\linewidth]{chep_talk_qr_code.pdf}}
-  \end{flushleft}
- \end{minipage}%
-
+ % \begin{center}
+ %  JSON Patch standard allows for reinterpretation with \textcolor{blue}{new signal models}
+ % \end{center}
+ % \begin{center}
+ %  % \includegraphics[width=0.7\linewidth]{carbon_JSON_patch.png}
+ %  \includegraphics[width=0.5\linewidth]{carbon_JSON_patch.png}
+ % \end{center}
+ %
+ % \begin{center}
+ %  % \includegraphics[width=0.7\linewidth]{carbon_reinterpretation.png}
+ %  \includegraphics[width=0.5\linewidth]{carbon_reinterpretation.png}
+ % \end{center}
 \end{multicols}
+%
+\vfill
+\noindent\makebox[\linewidth]{
+ \noindent\fcolorbox{NSF-violet}{NSF-violet}{%
+  \begin{minipage}[t]{\pagewidth}
+   \begin{minipage}{0.1\linewidth}
+    \begin{center}
+     \href{https://www.nsf.gov/}{\includegraphics[width=0.99\linewidth]{NSF_logo.png}}
+    \end{center}
+   \end{minipage}%
+   \begin{minipage}{0.05\linewidth}~\end{minipage}%
+   \begin{minipage}{0.8\linewidth}
+    {\large
+     \noindent\textcolor{white}{%
+      \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1836650}{
+       \noindent This project is supported by National Science Foundation under Cooperative Agreement OAC-1836650.
+       Any opinions, findings, conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.​}%
+     }
+    }
+   \end{minipage}%
+   \begin{minipage}{0.05\linewidth}~\end{minipage}%
+  \end{minipage}}%
+}% end makebox
 \end{document}
