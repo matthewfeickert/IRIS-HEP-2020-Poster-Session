@@ -25,6 +25,7 @@
 \newif\ifaeins
 \newif\ifazwei
 \newif\ifadrei
+\newif\ifafour
 \newif\ifpreview
 
 \newcount\xkoord
@@ -68,6 +69,13 @@
 \xscale=6
 \yscale=6
 }
+\DeclareOption{princeton}{
+\afourtrue\anullbfalse
+\xkoord=2160 % big points (1 bp=1/72 inch)
+\ykoord=2880 % big points (1 bp=1/72 inch)
+\xscale=25
+\yscale=25
+}
 \DeclareOption{landscape}{
 \portraitfalse
 }
@@ -109,6 +117,11 @@
                        \setlength{\paperheight}{29.7cm}
                        \setlength{\textwidth}{37.98cm}
                        \setlength{\textheight}{25.7cm}
+                   \else\ifafour
+                          \setlength{\paperwidth}{101.6cm}
+                          \setlength{\paperheight}{76.2cm}
+                          \setlength{\textwidth}{91.6cm} %% paperwidth - (5cm + 5cm)
+                          \setlength{\textheight}{66.2cm} %% paperheight - (5cm + 5cm)
                     \else\relax
                     \fi
                \fi
@@ -189,6 +202,8 @@
                \else\ifadrei
                       \ifpreview
                        \ifportrait\special{papersize=29.7cm,41.35cm}\else\special{papersize=41.98cm,29.0cm}\fi
+                    \else\ifafour
+                            \ifportrait\special{papersize=76.2cm,101.6cm}\else\special{papersize=101.6cm,76.2cm}\fi
                       \else
                        \ifportrait\special{papersize=29.7cm,41.98cm}\else\special{papersize=41.98cm,29.7cm}\fi
                       \fi
