@@ -122,6 +122,8 @@
                           \setlength{\paperheight}{76.2cm}
                           \setlength{\textwidth}{91.6cm} %% paperwidth - (5cm + 5cm)
                           \setlength{\textheight}{66.2cm} %% paperheight - (5cm + 5cm)
+                          % \setlength{\textwidth}{93cm}
+                          % \setlength{\textheight}{68.2cm}
                     \else\relax
                     \fi
                \fi
@@ -149,17 +151,19 @@
 %%   	B: 18.1mm
 
 
-\voffset -1in
-\hoffset -1in
-
-\setlength{\headheight}{0 cm}
-\setlength{\headsep}{0 cm}
-% \setlength{\topmargin}{5 cm} %% 3 cm for unprintable at top
-\setlength{\topmargin}{1 cm} %% 3 cm for unprintable at top
-			     %% (landscape) + 2 cm from border
-\setlength{\oddsidemargin}{5 cm} %% 3 cm for unprintable at left
-			    	 %% (landscape) + 2 cm from border
-\setlength{\topskip}{0 cm}
+% \voffset -1in
+% \hoffset -1in
+%
+% \setlength{\headheight}{0 cm}
+% \setlength{\headsep}{0 cm}
+% % \setlength{\topmargin}{5 cm} %% 3 cm for unprintable at top
+% \setlength{\topmargin}{1 cm} %% 3 cm for unprintable at top
+% 			     %% (landscape) + 2 cm from border
+% \setlength{\oddsidemargin}{5 cm} %% 3 cm for unprintable at left
+% % \setlength{\oddsidemargin}{2 cm}
+% % \setlength{\evensidemargin}{2 cm}
+% 			    	 %% (landscape) + 2 cm from border
+% \setlength{\topskip}{0 cm}
 
 \input{a0size.sty}
 

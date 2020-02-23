@@ -41,6 +41,11 @@
 \usepackage{tikz}
 \usepackage[skins]{tcolorbox}
 \usepackage{fancyhdr}
+\usepackage[%
+left=5cm,%
+right=5cm,%
+top=0.5cm,%
+bottom=0cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 
 % \fancyhf{}% Remove header/footer
@@ -59,7 +64,7 @@
 \definecolor{NSF-violet}{HTML}{8b82bb}
 
 % Shrink bottom margin
-\addtolength{\textheight}{7cm}
+% \addtolength{\textheight}{7cm}
 \begin{document}
 %
 %----------------------------------------------------------------------------------------
@@ -74,13 +79,14 @@
 % \begin{minipage}[b]{0.75\linewidth}
 % Header
 \begin{minipage}[b]{\linewidth}
+ \hspace{-5cm}
  % IRIS-HEP logo
  \begin{minipage}{0.2\linewidth}
   \href{https://iris-hep.org/}{\includegraphics[width=\linewidth]{IRIS-HEP_logo.eps}}
  \end{minipage}%
  \quad
  % project title
- \begin{minipage}{0.6\linewidth}
+ \begin{minipage}{0.58\linewidth}
   \VERYHuge \color{Black} \textbf{pyhf}\\[0.5cm] \color{Black}\Huge{pure Python implementation of HistFactory}\\[1cm] % Subtitle
   \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
   \LARGE {\href{https://www.matthewfeickert.com/}{\underline{Matthew Feickert}$^{1}$}}, \href{http://www.lukasheinrich.com/}{Lukas Heinrich$^{2}$}, \href{https://giordonstark.com/}{Giordon Stark$^{3}$}\\[0.5cm] % Author(s)
@@ -89,10 +95,32 @@
  \end{minipage}
  \quad
  % pyhf logo
- \begin{minipage}{0.16\linewidth}
+ \begin{minipage}{0.22\linewidth}
+   \vspace{-1cm}
   \begin{center}
    \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{pyhf-logo.png}}
   \end{center}
+
+   \vspace{-0.5cm}
+   \begin{center}
+    \href{https://doi.org/10.5281/zenodo.1169739}{\includegraphics[width=\linewidth]{zenodo_doi.pdf}}
+   \end{center}
+ \end{minipage}%
+ % GitHub stuff
+ \begin{minipage}{0.2\linewidth}
+  \begin{minipage}{0.25\linewidth}
+   \begin{flushleft}
+    \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{GitHub_logo.png}}
+   \end{flushleft}
+  \end{minipage}%
+  % \quad
+  \begin{minipage}{0.25\linewidth}
+   \begin{flushleft}
+    \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{github_qr_code.pdf}}
+   \end{flushleft}
+  \end{minipage}%
+  %
+  \hspace{5cm}
  \end{minipage}%
  % \begin{minipage}{0.2\linewidth}
  %  \begin{center}
@@ -105,9 +133,8 @@
  %   \href{https://doi.org/10.5281/zenodo.1169739}{\includegraphics[width=\linewidth]{zenodo_doi.pdf}}
  %  \end{center}
  % \end{minipage}%
+ \vspace{-1cm}
 \end{minipage}
-%
-% \vspace{0.1cm}
 \noindent\makebox[\linewidth]{\crule[NSF-blue]{\paperheight}{0.5cm}}
 %
 % \vspace{1cm}
@@ -220,7 +247,8 @@
 
  \section*{\LARGE\color{MediumBlue} Optimizers}
 
- Support optimizers that implement Newton's method as well as \texttt{scipy.optimize.minimize} and MINUIT. More advanced optimizers to come soon!
+ Support optimizers that implement Newton's method as well as \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html}{\texttt{scipy.optimize.minimize}} and MINUIT.
+ More advanced optimizers to come soon!
 
  \vspace{1cm}
  % \begin{minipage}{0.5\linewidth}
