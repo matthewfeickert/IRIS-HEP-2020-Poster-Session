@@ -14,11 +14,7 @@ def generate_qrcode(url, filepath=None):
 
 def main():
     generate_qrcode(
-        url="https://github.com/diana-hep/pyhf", filepath="figures/github_qr_code.svg"
-    )
-    generate_qrcode(
-        url="https://indico.cern.ch/event/773049/contributions/3476143/",
-        filepath="figures/chep_talk_qr_code.svg",
+        url="https://github.com/scikit-hep/pyhf", filepath="figures/github_qr_code.svg"
     )
 
 
