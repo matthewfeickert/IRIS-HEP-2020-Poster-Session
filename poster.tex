@@ -41,30 +41,20 @@
 \usepackage{tikz}
 \usepackage[skins]{tcolorbox}
 \usepackage{fancyhdr}
+\newlength{\marginoffset}
+\setlength{\marginoffset}{3.25cm}
 \usepackage[%
-left=5cm,%
-right=5cm,%
+left=\marginoffset,%
+right=\marginoffset,%
 top=0.5cm,%
 bottom=0cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 
-% \fancyhf{}% Remove header/footer
-% \lhead{\colorbox{red}{%
-%   \makebox[\dimexpr\linewidth-2\fboxsep][l]{\color{white}%
-%     REST API Reference (v12.011918)
-%     \hfill
-%     \thepage
-%   }%
-% }}
-
 \newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
-% \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
 \definecolor{NSF-blue}{HTML}{3487c0}
 \definecolor{NSF-violet}{HTML}{8b82bb}
 
-% Shrink bottom margin
-% \addtolength{\textheight}{7cm}
 \begin{document}
 %
 %----------------------------------------------------------------------------------------
@@ -79,23 +69,22 @@ bottom=0cm]{geometry}
 % \begin{minipage}[b]{0.75\linewidth}
 % Header
 \begin{minipage}[b]{\linewidth}
- \hspace{-5cm}
+ \hspace{-\marginoffset}
  % IRIS-HEP logo
- \begin{minipage}{0.2\linewidth}
+ \begin{minipage}{0.25\linewidth}
   \href{https://iris-hep.org/}{\includegraphics[width=\linewidth]{IRIS-HEP_logo.eps}}
  \end{minipage}%
  \quad
  % project title
- \begin{minipage}{0.58\linewidth}
+ \begin{minipage}{0.54\linewidth}
   \VERYHuge \color{Black} \textbf{pyhf}\\[0.5cm] \color{Black}\Huge{pure Python implementation of HistFactory}\\[1cm] % Subtitle
   \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
   \LARGE {\href{https://www.matthewfeickert.com/}{\underline{Matthew Feickert}$^{1}$}}, \href{http://www.lukasheinrich.com/}{Lukas Heinrich$^{2}$}, \href{https://giordonstark.com/}{Giordon Stark$^{3}$}\\[0.5cm] % Author(s)
   \normalsize {1 University of Illinois at Urbana-Champaign,~2 CERN,~3 University of California Santa Cruz}\\[1cm]% University/organization
   \color{Black}
  \end{minipage}
- \quad
  % pyhf logo
- \begin{minipage}{0.22\linewidth}
+ \begin{minipage}{0.18\linewidth}
    \vspace{-1cm}
   \begin{center}
    \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{pyhf-logo.png}}
@@ -107,7 +96,7 @@ bottom=0cm]{geometry}
    \end{center}
  \end{minipage}%
  % GitHub stuff
- \begin{minipage}{0.2\linewidth}
+ \begin{minipage}{0.18\linewidth}
   \begin{minipage}{0.25\linewidth}
    \begin{flushleft}
     \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{GitHub_logo.png}}
@@ -120,7 +109,6 @@ bottom=0cm]{geometry}
    \end{flushleft}
   \end{minipage}%
   %
-  \hspace{5cm}
  \end{minipage}%
  % \begin{minipage}{0.2\linewidth}
  %  \begin{center}
