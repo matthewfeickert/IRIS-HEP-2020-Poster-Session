@@ -176,7 +176,8 @@
 \renewcommand{\Large}{\fontsize{35.83}{45}\selectfont}
 \renewcommand{\LARGE}{\fontsize{43}{54}\selectfont}
 \renewcommand{\huge}{\fontsize{51.6}{64}\selectfont}
-\renewcommand{\Huge}{\fontsize{61.92}{77}\selectfont}
+% \renewcommand{\Huge}{\fontsize{61.92}{77}\selectfont}
+\renewcommand{\Huge}{\fontsize{61}{77}\selectfont}
 \newcommand{\veryHuge}{\fontsize{74.3}{93}\selectfont}
 \newcommand{\VeryHuge}{\fontsize{89.16}{112}\selectfont}
 \newcommand{\VERYHuge}{\fontsize{107}{134}\selectfont}
