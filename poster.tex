@@ -1,0 +1,284 @@
+% a0poster Portrait Poster
+% LaTeX Template
+% Version 1.0 (22/06/13)
+%
+% The a0poster class was created by:
+% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% \directlua{pdf.setminorversion(7)}
+\documentclass[princeton,portrait]{a0poster}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+% \columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage[skins]{tcolorbox}
+\usepackage{fancyhdr}
+\newlength{\marginoffset}
+\setlength{\marginoffset}{3.25cm}
+\usepackage[%
+left=\marginoffset,%
+right=\marginoffset,%
+top=0.5cm,%
+bottom=0cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand\crule[3][black]{\textcolor{#1}{\rule{#2}{#3}}}
+
+\definecolor{NSF-blue}{HTML}{3487c0}
+\definecolor{NSF-violet}{HTML}{8b82bb}
+
+\begin{document}
+%
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER
+%----------------------------------------------------------------------------------------
+%
+% The header is divided into two boxes:
+% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
+% The second is 25% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+%
+% \begin{minipage}[b]{0.75\linewidth}
+% Header
+\begin{minipage}[b]{\linewidth}
+ \hspace{-\marginoffset}
+ % IRIS-HEP logo
+ \begin{minipage}{0.25\linewidth}
+  \href{https://iris-hep.org/}{\includegraphics[width=\linewidth]{IRIS-HEP_logo.eps}}
+ \end{minipage}%
+ \quad
+ % project title
+ \begin{minipage}{0.53\linewidth}
+  \VERYHuge \color{Black} \textbf{pyhf}\\[0.5cm] \color{Black}\Huge{pure Python implementation of HistFactory}\\[0.5cm] % Subtitle
+  \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+  \LARGE {\href{https://www.matthewfeickert.com/}{\underline{Matthew Feickert}$^{1}$}}, \href{http://www.lukasheinrich.com/}{Lukas Heinrich$^{2}$}, \href{https://giordonstark.com/}{Giordon Stark$^{3}$}\\[0.5cm] % Author(s)
+  \normalsize {1 University of Illinois at Urbana-Champaign,~2 CERN,~3 University of California Santa Cruz}\\[1cm]% University/organization
+  \color{Black}
+ \end{minipage}
+ % pyhf logo
+ \begin{minipage}{0.18\linewidth}
+  \vspace{-2.5cm}
+  \begin{center}
+   \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{pyhf-logo.png}}
+  \end{center}
+
+  \vspace{-0.5cm}
+  \begin{center}
+   \href{https://doi.org/10.5281/zenodo.1169739}{\includegraphics[width=\linewidth]{zenodo_doi.pdf}}
+  \end{center}
+ \end{minipage}%
+ % GitHub stuff
+ \begin{minipage}{0.18\linewidth}
+  \begin{minipage}{0.25\linewidth}
+   \begin{flushleft}
+    \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{GitHub_logo.png}}
+   \end{flushleft}
+  \end{minipage}%
+  \,\!
+  \begin{minipage}{0.325\linewidth}
+   \begin{flushleft}
+    \href{https://github.com/scikit-hep/pyhf}{\includegraphics[width=\linewidth]{github_qr_code.pdf}}
+   \end{flushleft}
+  \end{minipage}%
+  %
+ \end{minipage}%
+ \vspace{-2cm}
+\end{minipage}
+\noindent\makebox[\linewidth]{\crule[NSF-blue]{\paperheight}{0.27in}}
+
+%----------------------------------------------------------------------------------------
+
+\vspace{0.25cm}
+\begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+ %----------------------------------------------------------------------------------------
+ %	ABSTRACT
+ %----------------------------------------------------------------------------------------
+
+ % \color{Navy} % Navy color for the abstract
+
+ %----------------------------------------------------------------------------------------
+ %	INTRODUCTION
+ %----------------------------------------------------------------------------------------
+
+ % \color{SaddleBrown} % SaddleBrown color for the introduction
+
+ \section*{\LARGE\color{MediumBlue} HistFactory}
+ \large
+ One of the most widely used statistical models in \textbf{high energy physics} for binned measurements and searches
+
+ \begin{center}
+  \includegraphics[width=\linewidth]{HistFactory_result_examples.png}
+ \end{center}
+ %
+ \begin{minipage}{0.33\linewidth}
+  \begin{flushleft}
+   \large\quad~~\textbf{Standard Model}
+  \end{flushleft}
+ \end{minipage}%
+ \quad
+ \begin{minipage}{0.33\linewidth}
+  \begin{flushleft}
+   \large\quad~\textbf{Supersymmetry}
+  \end{flushleft}
+ \end{minipage}%
+ \quad
+ \begin{minipage}{0.33\linewidth}
+  \begin{flushleft}
+   \large\qquad~~\textbf{Exotics}
+  \end{flushleft}
+ \end{minipage}%
+
+ \section*{\LARGE\color{MediumBlue} Declarative binned likelihoods}
+
+ \[
+  f(\bm{n}, \bm{a} \,|\,\bm{\phi},\bm{\chi}) = \underbrace{\color{blue}{\prod_{c\in\mathrm{\,channels}} \prod_{b \in \mathrm{\,bins}_c}\textrm{Pois}\left(n_{cb} \,\middle|\, \nu_{cb}\left(\bm{\eta},\bm{\chi}\right)\right)}}_{\substack{\text{Simultaneous measurement}\\%
+    \text{of multiple channels}}} \underbrace{\color{red}{\prod_{\chi \in \bm{\chi}} c_{\chi}(a_{\chi} |\, \chi)}}_{\substack{\text{constraint terms}\\%
+    \text{for }\text{``auxiliary measurements''}}}
+ \]
+
+ \noindent\textcolor{blue}{Primary Measurement}:
+ \begin{itemize}
+  \item Multiple disjoint ``channels'' (e.g. event observables) each with multiple bins of data
+  \item Example parameter of interest: strength of physics signal, $\mu$
+ \end{itemize}
+ \textcolor{red}{Auxiliary Measurements}:
+ \begin{itemize}
+  \item Nuisance parameters (e.g. in-situ measurements of background samples)
+  \item Systematic uncertainties (e.g. normalization, shape, luminosity)
+ \end{itemize}
+
+ \section*{\LARGE\color{MediumBlue} Performance}
+ Efficient use of tensor computation makes pyhf fast
+ \begin{center}
+  \includegraphics[width=\linewidth]{performance_only.pdf}
+ \end{center}
+ Competitive with traditional \texttt{C++} implementation --- often faster
+
+ \section*{\LARGE\color{MediumBlue} Hardware Acceleration}
+ For machine-learning-library tensor backends the computational graph can be transparently placed on hardware accelerators: \textbf{GPUs} and \textbf{TPUs} for order of magnitude speed-up in computation
+ \begin{center}
+  \includegraphics[width=\linewidth]{scaling_hardware.pdf}
+ \end{center}
+
+ \section*{\LARGE\color{MediumBlue} Automatic Differentiation}
+
+ Tensor libraries from machine learning frameworks provide exact gradients of computational graphs (likelihood). Useful for minimization!
+
+ \section*{\LARGE\color{MediumBlue} Optimizers}
+
+ Leverage automatic differentiation combined with \href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html}{\texttt{scipy.optimize.minimize}} or MINUIT across all backends.
+ More advanced optimizers to come soon!
+
+ \section*{\LARGE\color{MediumBlue} Implementation}
+ \begin{center}
+  \includegraphics[width=0.7\linewidth]{computational_graph.png}
+ \end{center}
+ The computational graph of multidimensional array operations for likelihood function of a physics analysis defined through HistFactory
+
+ \vspace{1cm}
+ %
+ \begin{minipage}{0.25\linewidth}
+  \begin{center}
+   \href{https://github.com/numpy/numpy}{\includegraphics[width=\linewidth]{NumPy_logo.pdf}}
+  \end{center}
+ \end{minipage}%
+ \quad
+ \begin{minipage}{0.25\linewidth}
+  \begin{center}
+   \href{https://github.com/tensorflow/tensorflow}{\includegraphics[width=\linewidth]{TensorFlow_logo.pdf}}
+  \end{center}
+ \end{minipage}%
+ \quad
+ \begin{minipage}{0.25\linewidth}
+  \begin{center}
+   \href{https://github.com/pytorch/pytorch}{\includegraphics[width=0.85\linewidth]{Pytorch_logo.pdf}}
+  \end{center}
+ \end{minipage}%
+ \quad
+ \begin{minipage}{0.25\linewidth}
+  \begin{flushleft}
+   \href{https://github.com/google/jax}{\includegraphics[width=0.5\linewidth]{JAX_logo.png}}
+  \end{flushleft}
+ \end{minipage}%
+ \vspace{1cm}
+
+ \noindent Use of $n$-dimensional array (``tensor'') operations through a common API layer around high performance tensor libraries
+
+ \section*{\LARGE\color{MediumBlue} JSON Specification}
+ The \textcolor{blue}{full likelihood} can be expressed as a \textbf{single JSON document}.
+ Archive friendly for analysis presentation!
+ \vspace{0.5em}
+ \begin{center}
+  \href{https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/examples/json/2-bin_1-channel.json}{\includegraphics[width=0.59\linewidth]{carbon_JSON_spec_annotated.png}}
+
+  {\small\textbf{Example:} 2 binned single channel with 2 samples with 1 parameter of interest and 1 nuisance parameter}
+ \end{center}
+ \noindent Used by ATLAS to \textcolor{blue}{reproduce} and \textcolor{blue}{publish likelihoods} to HEPData\\(\textcolor{blue}{\href{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2019-029/}{ATL-PHYS-PUB-2019-029}})
+
+ \begin{minipage}{\linewidth}
+  \begin{minipage}{0.5\linewidth}
+   \begin{center}
+    \href{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PUBNOTES/ATL-PHYS-PUB-2019-029/}{\includegraphics[width=\linewidth]{ATL-PHYS-PUB-2019-029_multi-b_limit.pdf}}
+   \end{center}
+  \end{minipage}
+  \begin{minipage}{0.5\linewidth}
+   \begin{center}
+    \href{https://home.cern/news/news/knowledge-sharing/new-open-release-allows-theorists-explore-lhc-data-new-way}{\includegraphics[width=0.68\linewidth]{CERN_new_story_crop.png}}
+   \end{center}
+  \end{minipage}
+ \end{minipage}
+\end{multicols}
+%
+\vfill
+\noindent\makebox[\linewidth]{
+ \noindent\fcolorbox{NSF-violet}{NSF-violet}{%
+  \begin{minipage}[t]{\pagewidth}
+   \begin{minipage}{0.1\linewidth}
+    \begin{center}
+     % Use height from template
+     \href{https://www.nsf.gov/}{\includegraphics[height=2.19in]{NSF_logo.png}}
+    \end{center}
+   \end{minipage}%
+   \qquad
+   \begin{minipage}{0.8\linewidth}
+    {\large%
+     \noindent\textcolor{white}{%
+      \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1836650}{%
+       \noindent This project is supported by National Science Foundation under Cooperative Agreement OAC-1836650.
+       Any opinions, findings, conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.​}%
+     }
+    }
+   \end{minipage}%
+   \begin{minipage}{0.05\linewidth}~\end{minipage}%
+  \end{minipage}}%
+}% end makebox
+\end{document}
