@@ -9,6 +9,8 @@
 To build the poster first create a Python virtual environment and activate it and then install the `requirements` and then build the poster with `make`
 
 ```shell
+$ python3 -m venv poster-session
+$ source poster-session/bin/activate
 (poster-session) $ python -m pip install -r requirements.txt
-(poster-session) $ make 
+(poster-session) $ make
 ```
